@@ -235,6 +235,7 @@ body {
 #confirmation-details {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
+  padding: 8rem 0 6rem 0;
 }
 
 #confirmation-details h2 {
@@ -267,7 +268,7 @@ body {
   position: relative;
   overflow: hidden;
   animation: cardFloat 6s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2), 0 0 80px rgba(212, 175, 55, 0.1), 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 40px rgba(92, 48, 133, 0.3), 0 0 80px rgba(92, 48, 133, 0.15), 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .confirmation-card::before {
@@ -277,7 +278,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(92, 48, 133, 0.15), transparent);
   transform: rotate(45deg);
   animation: cardShine 4s linear infinite;
   pointer-events: none;
@@ -285,8 +286,8 @@ body {
 
 .confirmation-card:hover {
   transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 0 60px rgba(212, 175, 55, 0.4), 0 0 120px rgba(212, 175, 55, 0.2), 0 30px 60px rgba(0, 0, 0, 0.3);
-  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 60px rgba(92, 48, 133, 0.5), 0 0 120px rgba(92, 48, 133, 0.25), 0 30px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(92, 48, 133, 0.4);
 }
 
 .confirmation-icon {
