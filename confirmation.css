@@ -1,12 +1,164 @@
+/* Title style: gold gradient, same as form page */
+.hero-title, h1, h2, h3 {
+  background: linear-gradient(135deg, #f4f1e8 0%, #d49d1a 25%, #b8850d 60%, #935c00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* Card style: sparkle background, gold border, same as form page */
+.confirmation-card {
+  background: rgba(0, 0, 0, 0.92);
+  border-radius: 1.2em;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(184, 133, 13, 0.7);
+  border: 1.5px solid #7a4f00;
+  color: #d49d1a;
+  font-weight: 700;
+  padding: 2em 1.5em;
+  margin: 1em 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.confirmation-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.7) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 75% 30%, rgba(255,255,255,0.5) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 70%, rgba(255,255,255,0.8) 1.5px, transparent 1.5px);
+  background-size: 140px 140px, 190px 190px, 170px 170px;
+  animation: sparkleFloat 7s linear infinite;
+  opacity: 0.7;
+}
+@keyframes sparkleFloat {
+  0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+  100% { background-position: 100% 100%, 100% 100%, 100% 100%; }
+}
 /* Confirmation Page Specific Styles */
 :root {
   --bg-dark: #000000;
   --bg-light: #000000;
   --text-light: #f5f5f7;
-  --text-dark: #4a2973;
-  --accent: #5c3085;
-  --accent-secondary: #7a4099;
-  --accent-glow: rgba(92, 48, 133, 0.2);
+  --text-dark: #1a1a1a;
+  --accent: #b8850d;
+  --accent-secondary: #d49d1a;
+  --accent-glow: rgba(184, 133, 13, 0.15);
+  --gold-primary: #935c00;
+  --gold-light: #b8850d;
+  --gold-medium: #a67400;
+  --gold-dark: #7a4f00;
+  --title-gold: #d49d1a;
+  --title-gradient: linear-gradient(135deg, #f4f1e8 0%, #d49d1a 25%, #b8850d 60%, #935c00 100%);
+  --hero-gradient: #000000;
+}
+body {
+  background: #000 !important;
+  color: #f5f5f7;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section, .content-section {
+  background: #000 !important;
+  color: #f5f5f7;
+}
+
+.hero-title, h1, h2, h3 {
+  background: linear-gradient(135deg, #f4f1e8 0%, #d49d1a 50%, #b8850d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+}
+
+.hero-badge, .cta-button, .confirmation-card {
+  /* Only apply these styles to .hero-badge and .confirmation-card, not .cta-button */
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #ffd700 0%, #d49d1a 100%);
+  color: #935c00;
+  border: none;
+  padding: 0.7em 2em;
+  border-radius: 2em;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  box-shadow: 0 0 12px #d49d1a;
+  background: linear-gradient(90deg, #ffd700 0%, #d49d1a 100%);
+  color: #935c00;
+}
+
+.confirmation-card {
+  background: rgba(0, 0, 0, 0.92); 
+  border-radius: 1.2em; 
+  box-shadow: none !important; 
+  border: 1.5px solid #7a4f00; 
+  color: #d49d1a; 
+  font-weight: 700; 
+  padding: 2em 1.5em; 
+  margin: 1em 0; 
+  text-align: center; 
+  background-image: none !important; 
+}
+
+.confirmation-icon {
+  font-size: 2em; 
+  margin-bottom: 0.5em; 
+  color: #d49d1a; 
+  background: none !important; 
+  box-shadow: none !important; 
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 0.5em;
+  }
+  .confirmation-card {
+    padding: 1em 0.5em;
+    font-size: 1em;
+  }
+  .hero-title, h1, h2, h3 {
+    font-size: 1.3em;
+  }
+}
+/* Confirmation Page Specific Styles */
+:root {
+  --bg-dark: #000000;
+  --bg-light: #000000;
+  --text-light: #f5f5f7;
+  --text-dark: #1a1a1a;
+  --accent: #b8850d;
+  --accent-secondary: #d49d1a;
+  --accent-glow: rgba(184, 133, 13, 0.15);
+  --gold-primary: #935c00;
+  --gold-light: #b8850d;
+  --gold-medium: #a67400;
+  --gold-dark: #7a4f00;
+  --title-gold: #d49d1a;
+  --title-gradient: linear-gradient(135deg, #f4f1e8 0%, #d49d1a 25%, #b8850d 60%, #935c00 100%);
   --hero-gradient: #000000;
 }
 
@@ -78,7 +230,7 @@ body {
 
 .float-element {
   position: absolute;
-  background: linear-gradient(45deg, var(--accent), #ff6b9d);
+  background: linear-gradient(45deg, var(--accent), #c8a00d);
   border-radius: 50%;
   opacity: 0.1;
   animation: float 20s ease-in-out infinite;
@@ -125,7 +277,7 @@ body {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(142, 80, 255, 0.1);
+  background: rgba(238, 195, 23, 0.4);
   border: 1px solid var(--accent);
   color: var(--accent);
   padding: 0.75rem 1.5rem;
@@ -137,8 +289,8 @@ body {
 }
 
 @keyframes badgeGlow {
-  0% { box-shadow: 0 0 20px rgba(142, 80, 255, 0.3); }
-  100% { box-shadow: 0 0 40px rgba(142, 80, 255, 0.6); }
+  0% { box-shadow: 0 0 20px rgba(111, 79, 2, 0.3); }
+  100% { box-shadow: 0 0 40px rgba(203, 157, 20, 0.819); }
 }
 
 .hero-title {
@@ -150,24 +302,24 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(92, 48, 133, 0.3);
+  text-shadow: 0 0 20px rgba(85, 64, 2, 0.785);
 }
 
 .wrk-logo {
   display: inline-block;
   transform: scale(1);
   transition: transform 0.3s ease;
-  background: linear-gradient(135deg, #000000 0%, #333333 30%, #666666 60%, #333333 90%, #000000 100%);
+  background: linear-gradient(135deg, #e1bd3d 0%, #ffffff 30%, #fddc22 60%, #e3b939 90%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 40px rgba(92, 48, 133, 0.4)) drop-shadow(0 0 80px rgba(92, 48, 133, 0.2));
+  filter: drop-shadow(0 0 40px rgba(238, 195, 23, 0.4)) drop-shadow(0 0 80px rgba(238, 195, 23, 0.4));
   position: relative;
 }
 
 .wrk-logo:hover {
   transform: scale(1.1) rotate(-2deg);
-  filter: drop-shadow(0 0 50px rgba(92, 48, 133, 0.5)) drop-shadow(0 0 100px rgba(92, 48, 133, 0.25));
+  filter: drop-shadow(0 0 50px rgba(238, 195, 23, 0.4)) drop-shadow(0 0 100px rgba(238, 195, 23, 0.4));
 }
 
 .hero-description {
@@ -185,7 +337,7 @@ body {
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #000000 0%, #333333 30%, #666666 60%, #333333 90%, #000000 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #cdb00f 30%, #000000 60%, #dda71e 90%, #000000 100%);
   border: none;
   padding: 1rem 2.5rem;
   border-radius: 25px;
@@ -196,7 +348,7 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 0 30px rgba(92, 48, 133, 0.4), 0 0 60px rgba(92, 48, 133, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* box-shadow removed to eliminate shine */
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -207,8 +359,8 @@ body {
 
 .cta-button:hover {
   transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 30%, #7a7a7a 60%, #4a4a4a 90%, #1a1a1a 100%);
-  box-shadow: 0 0 40px rgba(92, 48, 133, 0.6), 0 0 80px rgba(92, 48, 133, 0.3), 0 12px 48px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #1a1a1a 0%, #836902 30%, #7a7a7a 60%, #af9906 90%, #1a1a1a 100%);
+  /* box-shadow removed to eliminate shine on hover */
 }
 
 .cta-button:active {
@@ -233,7 +385,7 @@ body {
 
 /* CONFIRMATION DETAILS SECTION */
 #confirmation-details {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(20px);
   padding: 8rem 0 6rem 0;
 }
@@ -268,7 +420,7 @@ body {
   position: relative;
   overflow: hidden;
   animation: cardFloat 6s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(92, 48, 133, 0.3), 0 0 80px rgba(92, 48, 133, 0.15), 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 40px rgba(195, 144, 14, 0.3), 0 0 80px rgba(133, 109, 48, 0.15), 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .confirmation-card::before {
@@ -278,7 +430,7 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(92, 48, 133, 0.15), transparent);
+  background: linear-gradient(45deg, transparent, rgba(203, 164, 24, 0.15), transparent);
   transform: rotate(45deg);
   animation: cardShine 4s linear infinite;
   pointer-events: none;
@@ -286,8 +438,8 @@ body {
 
 .confirmation-card:hover {
   transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 0 60px rgba(92, 48, 133, 0.5), 0 0 120px rgba(92, 48, 133, 0.25), 0 30px 60px rgba(0, 0, 0, 0.3);
-  border-color: rgba(92, 48, 133, 0.4);
+  box-shadow: 0 0 60px rgba(238, 195, 23, 0.5), 0 0 120px rgba(238, 195, 23, 0.25), 0 30px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(238, 195, 23, 0.4);
 }
 
 .confirmation-icon {
@@ -383,7 +535,7 @@ body {
 
 .newsletter-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(246, 223, 47, 0.688);
 }
 
 .social-links {
